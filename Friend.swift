@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Model
 class Friend {
     var name: String
     var birthday: Date
