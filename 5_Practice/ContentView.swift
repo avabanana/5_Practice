@@ -6,56 +6,51 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @State private var friends:[Friend] = [
+        Friend(name: "Joan", birthday: .now),
+        Friend(name: "Sienna", birthday: .now)
+    ]
+    @State private var newName = ""
+    @State private var newBirthday = Date.now
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+        NavigationStack{
+            List(friends, id: \.name) { friend in
+                HStack{
+                    Text(friend.name)
+                    Spacer()
+                    Text(friend.birthday, format: .dateTime.month(.wide).day().year())
                 }
             }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            .navigationTitle("Birthdays")
+            .safeAreaInset(edge: .bottom){
+                VStack(alignment: .center, spacing: 20){
+                    Text("new Birthday")
+                        .font(.headline)
+                    DatePicker(selection: $newBirthday, in: Date.distantPast...Date.now, displayedComponents: .date){
+                        TextField("Name", text:$newName)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    Button("Save"){
+                        let newFriend = Friend(name: newName, birthday: newBirthday)
+                        friends.append(newFriend)
+                        newName = ""
+                        newBirthday = .now
+                        
+                    }
+                    .bold()
+                }
+                .padding()
+                .background(.bar)
             }
         }
     }
 }
 
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        
 }

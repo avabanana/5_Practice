@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD7FAB5B2E33EFA0009C5EB9 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7FAB5A2E33EFA0009C5EB9 /* Friend.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BD7FAB3E2E33E7CB009C5EB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		BD7FAB2E2E33E7C8009C5EB9 /* 5_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7FAB3D2E33E7CB009C5EB9 /* 5_PracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 5_PracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7FAB472E33E7CB009C5EB9 /* 5_PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 5_PracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD7FAB5A2E33EFA0009C5EB9 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		BD7FAB252E33E7C8009C5EB9 = {
 			isa = PBXGroup;
 			children = (
+				BD7FAB5A2E33EFA0009C5EB9 /* Friend.swift */,
 				BD7FAB302E33E7C8009C5EB9 /* 5_Practice */,
 				BD7FAB402E33E7CB009C5EB9 /* 5_PracticeTests */,
 				BD7FAB4A2E33E7CB009C5EB9 /* 5_PracticeUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD7FAB5B2E33EFA0009C5EB9 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +404,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BirthdayApp;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +432,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BirthdayApp;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
